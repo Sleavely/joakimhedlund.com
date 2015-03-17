@@ -15,6 +15,7 @@
 	jQuery(document).ready(function(){
 		window.editor = new Editor();
 		editor.render();
+		editor.codemirror.focus();
 	});
 	</script>
 @endsection
@@ -28,11 +29,11 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="list-group">
-				<a href="/admin" class="list-group-item active">
-					Dashboard
+				<a href="/admin/blog" class="list-group-item active">
+					<i class="fa fa-file-text"></i> New post
 				</a>
-				<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-				<a href="#" class="list-group-item">Morbi leo risus</a>
+				<a href="#" class="list-group-item">How To Win At Android</a>
+				<a href="#" class="list-group-item">Building A Blog With Laravel And Markdown</a>
 				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
 				<a href="#" class="list-group-item">Vestibulum at eros</a>
 			</div>
@@ -40,8 +41,11 @@
 		<div class="col-md-9">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<p>Content here! :D</p>
-					<textarea placeholder="Markdown goes here"></textarea>
+					<input class="form-control input-lg" type="text" placeholder="Title goes here">
+					<textarea placeholder="Markdown goes here">{{ $markdown or '' }}</textarea>
+					<div class="pull-right">
+						<button type="button" class="btn btn-primary">Save Post</button>
+					</div>
 				</div>
 			</div>
 		</div>
