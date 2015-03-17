@@ -9,6 +9,13 @@
   <link href="{{{ asset('css/bootstrap.css') }}}" rel="stylesheet" type="text/css" />
   <link href="{{{ asset('css/font-awesome.min.css') }}}" rel="stylesheet" type="text/css" />
   <link href="{{{ asset('css/drunken-parrot.css') }}}" rel="stylesheet" type="text/css" />
+	<style>
+	html,
+	body
+	{
+		background-color: #f5f5f5;
+	}
+	</style>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,12 +34,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				<a class="navbar-brand" href="/">JoakimHedlund.com</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
+					<li><a href="/admin">Dashboard</a></li>
+					<li><a href="/admin/blog">Blog</a></li>
+					<li><a href="/admin/portfolio">Portfolio</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

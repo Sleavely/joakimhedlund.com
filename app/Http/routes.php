@@ -14,8 +14,8 @@
 // Public page
 Route::get('/', 'WelcomeController@index');
 
-Route::get('admin', 'AdminController@index');
 Route::controllers([
+  'admin' => 'AdminController',
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);

@@ -28,9 +28,14 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
 		return view('admin.home');
+	}
+
+	public function getBlog()
+	{
+		return view('admin.blog');
 	}
 
 }
