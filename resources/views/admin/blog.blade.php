@@ -13,7 +13,7 @@
 	<script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
 	<script>
 	jQuery(document).ready(function(){
-		var editor = new Editor();
+		window.editor = new Editor();
 		editor.render();
 	});
 	</script>
