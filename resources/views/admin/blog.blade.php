@@ -41,8 +41,8 @@
 		<div class="col-md-9">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<input class="form-control input-lg" type="text" placeholder="Title goes here">
-					<textarea placeholder="Markdown goes here">{{ $markdown or '' }}</textarea>
+					<input class="form-control input-lg" type="text" placeholder="Title goes here" value="{{ $post->title or '' }}" />
+					<textarea placeholder="Markdown goes here">{{ $post->markdown or '' }}</textarea>
 					<div class="pull-right">
 						<button type="button" class="btn btn-primary">Save Post</button>
 					</div>
