@@ -39,15 +39,18 @@
 			</div>
 		</div>
 		<div class="col-md-9">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<input class="form-control input-lg" type="text" placeholder="Title goes here" value="{{ $post->title or '' }}" />
-					<textarea placeholder="Markdown goes here">{{ $post->markdown or '' }}</textarea>
-					<div class="pull-right">
-						<button type="button" class="btn btn-primary">Save Post</button>
+			<form method="post" action="{{ action('AdminController@postBlog', [(isset($post) ? $post->id : 0)]) }}">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<input class="form-control input-lg" type="text" name="title" placeholder="Title goes here" value="{{ $post->title or '' }}" />
+						<textarea name="markdown" placeholder="Markdown goes here">{{ $post->markdown or '' }}</textarea>
+						<div class="pull-right">
+							<button type="submit" class="btn btn-primary">Save Post</button>
+						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>
