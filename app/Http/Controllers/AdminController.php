@@ -39,8 +39,12 @@ class AdminController extends Controller {
 		return view('admin.home');
 	}
 
+
 	public function getBlog($id = 0)
 	{
+		$entries = BlogPost::orderBy('created_at', 'DESC')->get();
+		view()->share('entries', $entries);
+
 		if(intval($id) > 0)
 		{
 			return $this->getBlogById($id);

@@ -29,13 +29,15 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="list-group">
-				<a href="/admin/blog" class="list-group-item active">
+				<a href="/admin/blog" class="list-group-item{{ (action('AdminController@getBlog') == Request::url() ? ' active' : '') }}">
 					<i class="fa fa-file-text"></i> New post
 				</a>
-				<a href="#" class="list-group-item">How To Win At Android</a>
-				<a href="#" class="list-group-item">Building A Blog With Laravel And Markdown</a>
-				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-				<a href="#" class="list-group-item">Vestibulum at eros</a>
+				@foreach($entries as $entry)
+					<a href="{{ action('AdminController@getBlog', [$entry->id ]) }}" class="list-group-item{{ (action('AdminController@getBlog', [$entry->id ]) == Request::url() ? ' active' : '') }}">
+						{{ $entry->title }}<br />
+						<small>{{ $entry->created_at->diffForHumans() }}</small>
+					</a>
+				@endforeach
 			</div>
 		</div>
 		<div class="col-md-9">
