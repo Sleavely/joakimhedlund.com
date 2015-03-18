@@ -16,6 +16,44 @@
 		{
 			background-color: #f5f5f5;
 		}
+		/* Override and imitate Drunken Parrot to avoid redundant elements/scripts */
+		.checkbox,
+		.radio
+		{
+			padding-left: 0px;
+		}
+		.checkbox label,
+		.radio label
+		{
+			padding-left: 32px;
+		}
+		.checkbox input[type="checkbox"],
+		.radio input[type="radio"]
+		{
+			display: inline-block;
+			height: 0px;
+			margin-left: 0px;
+			width: 0px;
+		}
+		.checkbox input:before
+		{
+			background: white;
+			border: 1px solid #d6e1e5;
+			border-radius: 4px;
+			color: #02baf2;
+			content: "\f00c";
+			display: inline-block;
+			font-family: FontAwesome;
+			font-size: 16px;
+			height: 20px;
+			text-align: center;
+			width: 20px;
+		}
+		.checkbox input:checked:before
+		{
+			content: "";
+		}
+
 		</style>
 	@show
 
