@@ -12,8 +12,8 @@ class BlogController extends Controller {
 	 */
 	public function index()
 	{
-		//
-		return view('blog.archive');
+		$posts = BlogPost::all();
+		return view('blog.archive')->withPosts($posts);
 	}
 
 	/**

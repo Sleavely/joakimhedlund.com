@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use \Parsedown;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Cviebrock\EloquentSluggable\SluggableInterface;
@@ -28,4 +29,10 @@ class BlogPost extends Model implements SluggableInterface {
 		'save_to'    => 'slug',
 	);
 
+  public function getHtmlAttribute()
+  {
+    $Parsedown = new Parsedown();
+    $html = $Parsedown->text( $this->markdown );
+    return $html;
+  }
 }

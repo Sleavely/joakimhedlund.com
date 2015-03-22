@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-  <title>{{ $post->title }} - Joakim Hedlund, web enthusiast</title>
-  <meta property="og:title" content="{{ $post->title }} - Joakim Hedlund" />
+  <title>{{{ $post->title }}} - Joakim Hedlund, web enthusiast</title>
+  <meta property="og:title" content="{{{ $post->title }}} - Joakim Hedlund" />
   <meta property="og:type" content="website" />
   <meta property="og:email" content="contact@joakimhedlund.com" />
   <meta property="og:url" content="http://joakimhedlund.com/" />
@@ -101,6 +101,16 @@
     border-top: 2px solid #d6e1e5;
   }
 
+  #meta,
+  #content
+  {
+    margin-bottom: 2em;
+  }
+  #meta span
+  {
+    font-size: 0.9em;
+  }
+
   #contact
   {
     margin-top: 10em;
@@ -127,12 +137,18 @@
   </div>
   <div class="container">
 
-    <div class="row">
+    <div class="row" id="meta">
       <div class="col-sm-9">
-        <h1 id="about">{{ $post->title }}</h1>
+        <h1 id="title">{{ $post->title }}</h1>
+        <span>Last updated {{ $post->updated_at->diffForHumans() }}</span>
       </div>
     </div>
 
+    <div class="row" id="content">
+      <div class="col-sm-9">
+        {{ $post->html }}
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-sm-9">
@@ -140,7 +156,7 @@
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES * * */
             var disqus_shortname = 'joakimhedlund';
-            var disqus_identifier = '{!! $post->slug !!}';
+            var disqus_identifier = '{{{ $post->slug }}}';
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {

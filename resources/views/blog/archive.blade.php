@@ -133,6 +133,16 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-sm-9">
+        <ul>
+        @foreach($posts as $post)
+          <li><a href="/blog/{{{ $post->slug }}}">{{{ $post->title }}}</a></li>
+        @endforeach
+        </ul>
+      </div>
+    </div>
+
     <div class="row" id="contact">
       <div class="col-sm-6 col-sm-offset-3">
         <div class="panel panel-default">
