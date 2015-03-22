@@ -13,6 +13,8 @@
 
 // Public page
 Route::get('/', 'WelcomeController@index');
+Route::get('blog', 'BlogController@index');
+Route::get('blog/{slug}', 'BlogController@show');
 
 Route::controllers([
   'admin' => 'AdminController',
