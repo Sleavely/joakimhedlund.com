@@ -3,6 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+use App\BlogPost;
+
 class AddSlugColumnToBlogposts extends Migration {
 
 	/**
@@ -16,6 +18,14 @@ class AddSlugColumnToBlogposts extends Migration {
 		{
 	    $table->string('slug');
 		});
+
+		// Now go through all the existing models and apply slugs.
+		$posts = BlogPost::all();
+		foreach($posts as $post)
+		{
+			$post->save();
+		}
+
 	}
 
 	/**
