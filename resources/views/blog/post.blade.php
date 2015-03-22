@@ -140,7 +140,7 @@
     <div class="row" id="meta">
       <div class="col-sm-9">
         <h1 id="title">{{ $post->title }}</h1>
-        <span>Last updated {{ $post->updated_at->diffForHumans() }}</span>
+        <span title="{{{ $post->updated_at->toW3cString() }}}">Last updated {{ $post->updated_at->diffForHumans() }}</span>
       </div>
     </div>
 
