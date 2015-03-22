@@ -13,7 +13,7 @@ class BlogController extends Controller {
 	public function index()
 	{
 		//
-		return view('blog');
+		return view('blog.archive');
 	}
 
 	/**
@@ -25,6 +25,7 @@ class BlogController extends Controller {
 	public function show($slug)
 	{
 		$post = BlogPost::findBySlug($slug);
+		return view('blog.post')->withPost($post);
 	}
 
 }
