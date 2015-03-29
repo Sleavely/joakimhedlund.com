@@ -14,7 +14,7 @@ class BlogpostPublishedOn extends Migration {
 	{
 		Schema::table('blog_posts', function($table)
 		{
-	    $table->timestamp('published_on')->nullable();
+	    $table->timestamp('published_at')->nullable();
 		});
 	}
 
@@ -27,7 +27,7 @@ class BlogpostPublishedOn extends Migration {
 	{
 		Schema::table('blog_posts', function($table)
 		{
-		  $table->dropColumn('published_on');
+		  $table->dropColumn('published_at');
 		});
 	}
 
