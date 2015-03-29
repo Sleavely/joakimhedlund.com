@@ -12,7 +12,7 @@ class BlogController extends Controller {
 	 */
 	public function index()
 	{
-		$posts = BlogPost::all();
+		$posts = BlogPost::whereNotNull('published_at')->get();
 		return view('blog.archive')->withPosts($posts);
 	}
 
