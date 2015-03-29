@@ -14,7 +14,7 @@ class BlogpostPublishedOn extends Migration {
 	{
 		Schema::table('blog_posts', function($table)
 		{
-	    $table->timestamp('published_on');
+	    $table->timestamp('published_on')->nullable();
 		});
 	}
 
