@@ -2,7 +2,7 @@
 
 @section('stylesheets')
 	@parent
-	
+
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/editor/0.1.0/editor.css">
 @endsection
 
@@ -49,6 +49,20 @@
 						<textarea name="markdown" placeholder="Markdown goes here">{{ $post->markdown or '' }}</textarea>
 						<div class="pull-right">
 							<button type="submit" class="btn btn-primary">Save Post</button>
+						</div>
+						<div class="form-group">
+							<div class="col-md-6">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="published" value="1" {{ (isset($post) && $post->published_at ? 'checked="checked"' : '') }} /> {{ (isset($post) && $post->published_at ? 'Published '.$post->published_at->diffForHumans() : 'Publish?') }}
+									</label>
+									@if(isset($post) && $post->published_at)
+										<div>
+											<a href="/blog/{{{ $post->slug }}}" target="_blank">/blog/{{{ $post->slug }}}</a>
+										</div>
+									@endif
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

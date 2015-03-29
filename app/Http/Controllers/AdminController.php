@@ -2,6 +2,7 @@
 
 use App\BlogPost;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AdminController extends Controller {
 
@@ -72,6 +73,19 @@ class AdminController extends Controller {
 			'title' => $this->request->input('title'),
 			'markdown' => $this->request->input('markdown'),
 		]);
+
+		// Check if the published-checkbox has changed values
+		$already_published = ($post->published_at ? true : false);
+		$wants_to_publish = ($this->request->input('published', '0'));
+		if(!$already_published && $wants_to_publish)
+		{
+			$post->published_at = Carbon::now();
+		}
+		if($already_published && !$wants_to_publish)
+		{
+			$post->published_at = null;
+		}
+
 		$post->save();
 
 		return redirect()->action('AdminController@getBlog', [$post->id]);
