@@ -15,6 +15,8 @@
   <meta property="fb:admins" content="1281266716" />
   <meta property="og:description" content="Web developer focusing on user experiences and code optimization." />
 
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss">
+
   <link href="{{{ asset('css/bootstrap.css') }}}" rel="stylesheet" type="text/css" />
   <link href="{{{ asset('css/font-awesome.min.css') }}}" rel="stylesheet" type="text/css" />
   <link href="{{{ asset('css/drunken-parrot.css') }}}" rel="stylesheet" type="text/css" />
