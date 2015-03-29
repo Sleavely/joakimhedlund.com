@@ -41,7 +41,7 @@
 			border: 1px solid #d6e1e5;
 			border-radius: 4px;
 			color: #02baf2;
-			content: "\f00c";
+			content: "";
 			display: inline-block;
 			font-family: FontAwesome;
 			font-size: 16px;
@@ -51,7 +51,7 @@
 		}
 		.checkbox input:checked:before
 		{
-			content: "";
+			content: "\f00c";
 		}
 
 		</style>
