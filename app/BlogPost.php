@@ -10,7 +10,7 @@ class BlogPost extends Model implements SluggableInterface {
 
   use SluggableTrait;
   use SoftDeletes;
-  protected $dates = ['deleted_at'];
+  protected $dates = ['deleted_at', 'published_at'];
 
 	/**
 	 * The attributes that are mass assignable.
