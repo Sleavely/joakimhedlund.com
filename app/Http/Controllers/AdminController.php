@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\BlogPost;
+use App\PortfolioWork;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -89,6 +90,57 @@ class AdminController extends Controller {
 		$post->save();
 
 		return redirect()->action('AdminController@getBlog', [$post->id]);
+	}
+
+
+	public function getPortfolio($id = 0)
+	{
+		$entries = PortfolioWork::orderBy('created_at', 'DESC')->get();
+		view()->share('entries', $entries);
+
+		if(intval($id) > 0)
+		{
+			return $this->getWorkById($id);
+		}
+		return view('admin.portfolio');
+	}
+	private function getWorkById($id)
+	{
+		$work = PortfolioWork::findOrFail($id);
+		return view('admin.portfolio')->withWork($work);
+	}
+	public function postPortfolio($id = 0)
+	{
+		if(intval($id) > 0)
+		{
+			$post = PortfolioWork::findOrFail($id);
+		}
+		else
+		{
+			$post = new PortfolioWork;
+		}
+		$post->fill([
+			'title' => $this->request->input('title'),
+			'markdown' => $this->request->input('markdown'),
+			'coverphoto_url' => $this->request->input('coverphoto_url'),
+			'demo_url' => $this->request->input('demo_url'),
+		]);
+
+		// Check if the published-checkbox has changed values
+		$already_published = ($post->published_at ? true : false);
+		$wants_to_publish = ($this->request->input('published', '0'));
+		if(!$already_published && $wants_to_publish)
+		{
+			$post->published_at = Carbon::now();
+		}
+		if($already_published && !$wants_to_publish)
+		{
+			$post->published_at = null;
+		}
+
+		$post->save();
+
+		return redirect()->action('AdminController@getPortfolio', [$post->id]);
 	}
 
 }
