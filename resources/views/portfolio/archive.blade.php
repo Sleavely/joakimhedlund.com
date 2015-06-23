@@ -139,7 +139,7 @@
       <div class="col-sm-9">
         <ul>
         @foreach($entries as $entry)
-          <li><a href="/blog/{{{ $entry->slug }}}">{{{ $entry->title }}}</a></li>
+          <li><a href="/portfolio/{{{ $entry->slug }}}">{{{ $entry->title }}}</a></li>
         @endforeach
         </ul>
       </div>
