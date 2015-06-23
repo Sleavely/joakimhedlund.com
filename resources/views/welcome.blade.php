@@ -46,7 +46,6 @@
   }
   #hero
   {
-    margin-bottom: 1em;
     min-height: 200px;
   }
   #hero h1
@@ -127,6 +126,7 @@
       </div>
     </div>
   </div>
+  @include('menu')
   <div class="container">
 
     <div class="row">
