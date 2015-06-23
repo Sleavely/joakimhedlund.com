@@ -131,7 +131,7 @@
 
     <div class="row">
       <div class="col-sm-9">
-        <h2 id="about">Blog</h2>
+        <h2 id="about">Portfolio</h2>
       </div>
     </div>
 
