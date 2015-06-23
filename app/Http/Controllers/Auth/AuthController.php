@@ -21,6 +21,11 @@ class AuthController extends Controller {
 	use AuthenticatesAndRegistersUsers;
 
 	/**
+	 * Override the default /home redirect after successful login
+	 */
+	protected $redirectTo = '/admin';
+
+	/**
 	 * Create a new authentication controller instance.
 	 *
 	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
@@ -33,6 +38,16 @@ class AuthController extends Controller {
 		$this->registrar = $registrar;
 
 		$this->middleware('guest', ['except' => 'getLogout']);
+	}
+
+	// Override the registration feature that comes with Laravel 5
+	public function getRegister()
+	{
+		return redirect('/');
+	}
+	public function postRegister()
+	{
+		return redirect('/');
 	}
 
 }
