@@ -11,9 +11,35 @@
 
 	<script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>
 	<script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
+	<script src="//widget.cloudinary.com/global/all.js"></script>
 	<script>
 	jQuery(document).ready(function(){
 		window.editor = new Editor();
+
+		// Insert Cloudinary before rendering
+		cloudinary.setCloudName('sleavely');
+		editor.options.toolbar.splice(8, 0, {
+			action: function(){
+				cloudinary.openUploadWidget(
+					{
+						default_source: 'url',
+						folder: 'blog',
+						multiple: false,
+						theme: 'minimal',
+						upload_preset: 'qfrv8x7t'
+					},
+					function(error, result) {
+						if(!error)
+						{
+							editor.codemirror.doc.replaceSelection('![](' + result[0].secure_url + ')');
+						}
+						console.log(error, result)
+					}
+				);
+			},
+			name: 'cloudinary'
+		});
+
 		editor.render();
 		editor.codemirror.focus();
 	});

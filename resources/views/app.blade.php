@@ -54,6 +54,20 @@
 			content: "\f00c";
 		}
 
+		.editor-toolbar .icon-cloudinary,
+		.editor-toolbar .icon-cloudinary:hover
+		{
+			background-image: url(//cloudinary.com/images/favicon-32x32.png);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 16px 16px;
+  		vertical-align: bottom;
+		}
+		.editor-toolbar .icon-cloudinary:hover
+		{
+			opacity: 0.75;
+		}
+
 		</style>
 	@show
 
