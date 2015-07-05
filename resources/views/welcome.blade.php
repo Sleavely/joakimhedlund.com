@@ -139,11 +139,8 @@
 
     <div class="row" style="border-bottom: 1px solid #d6e1e5; margin-bottom: 2em; padding-bottom: 1em;">
       <div class="col-sm-6">
-        <h2 id="experience">Experience</h2>
-        <p>I've tried to scribble down some of the things I've been busy building while you were out there looking for me. This is a non-exhaustive list that probably wont get updated very regularly, but it'll give you an idea of what I can help you with.</p>
-      </div>
-      <div class="col-sm-4 col-sm-offset-2">
-        <a href="#contact" class="btn btn-embossed btn-orange">Want to get in touch?</a>
+        <h2 id="work">Recent work</h2>
+        <p>Below are my three latest braggable projects. See my <a href="/portfolio">portfolio</a> for a broader view.</p>
       </div>
     </div>
     <div class="row">
