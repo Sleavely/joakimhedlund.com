@@ -225,7 +225,7 @@
           <img src="{{{ asset('images/klarna.png') }}}" alt="Klarna logo" style="padding: 20px;" />
           <div class="caption">
             <h4>Drupal</h4>
-            <p>I have extensive Drupal experience from my time in Klarna. Their needs for a scalable and multilingual platform led us to build the main website from the bottom and up in Drupal.</p>
+            <p>I have extensive Drupal experience from my time in Klarna. Their needs for a scalable and multilingual platform led us to migrate their main website from Joomla and rebuild it entirely in Drupal.</p>
           </div>
         </div>
       </div>
