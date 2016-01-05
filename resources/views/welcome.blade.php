@@ -164,7 +164,7 @@
           <img src="{{{ asset('images/4665905531_3c54137c0d_z.jpg') }}}" alt="Photo by Hermann Kaser" />
           <div class="caption">
             <h4>Performance optimization</h4>
-            <p>I'm a big fan of New Relic and the flame charts in Chrome's Developer Tools. Few things make me feel as bad-ass as cutting load times in half.</p>
+            <p>I'm a big fan of New Relic and the flame charts in Chrome's Developer Tools. Few things make me feel as bad-ass as cutting load times in half by implementing caches in just the right places and refactoring heavy bits of business logic.</p>
           </div>
         </div>
       </div>
