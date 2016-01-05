@@ -189,6 +189,9 @@
           <div class="caption">
             <h4>Laravel</h4>
             <p>Svensk Båtutbildning needed a new booking system and wanted it to eliminate the manual chores of handling payments.</p>
+            <p>
+              <a href="http://www.svenskbatutbildning.se/" class="btn btn-embossed btn-primary">See it in action</a>
+            </p>
           </div>
         </div>
       </div>
