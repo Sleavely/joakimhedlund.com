@@ -152,7 +152,7 @@
             <h4>Single page app</h4>
             <p>I built a level editor for a game to explore the fundamentals of single-page apps as well as push my frontend performance optimization skills to the limit.</p>
             <p>
-              <a href="http://otworlds.com" class="btn btn-embossed btn-primary">See it in action</a>
+              <a href="https://otworlds.com" class="btn btn-embossed btn-primary">See it in action</a>
               <a href="https://github.com/Sleavely/OTWorlds" class="btn btn-default" style="margin-left: 10px;">View on Github</a>
             </p>
           </div>
