@@ -44,7 +44,7 @@
     #hero
     {
       background-attachment: fixed;
-      background-image: url({{{ asset('images/9107882675_0cca140f23_k.jpg') }}}); /* Photo by Edward Stojakovic */
+      background-image: url('images/9107882675_0cca140f23_k.jpg'); /* Photo by Edward Stojakovic */
       background-position: center left;
       background-size: cover;
       min-height: 600px;
