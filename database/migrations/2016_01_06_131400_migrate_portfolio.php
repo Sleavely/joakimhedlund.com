@@ -25,45 +25,9 @@ class MigratePortfolio extends Migration {
 		sleep(1);
 
 		$post = new PortfolioWork;
-		$post->title = 'Barcode scanner web app';
-		$post->markdown = 'With a bit of JS and backend APIs the warehouse staff is now able to quickly look up shipment labels and product storage locations.';
-		$post->coverphoto_url = '/images/2683653952_c9064f0899_z.jpg';
-		$post->demo_url = '';
-		$post->published_at = Carbon::now();
-		$post->save();
-		sleep(1);
-
-		$post = new PortfolioWork;
-		$post->title = 'Returns portal';
-		$post->markdown = 'We needed a tailormade system for RMA to handle all of our edge cases, I ended up building a (mostly) single page app in a blended combo of Laravel and Handlebars.';
-		$post->coverphoto_url = '';
-		$post->demo_url = '';
-		$post->published_at = Carbon::now();
-		$post->save();
-		sleep(1);
-
-		$post = new PortfolioWork;
-		$post->title = 'ElasticSearch';
-		$post->markdown = 'Managing an e-store is tricky. I built a blazing fast search engine that indexes orders and shows additional information from various integrated services such as the payment provider, the shipping company and our customer support tool HelpScout.';
-		$post->coverphoto_url = '';
-		$post->demo_url = '';
-		$post->published_at = Carbon::now();
-		$post->save();
-		sleep(1);
-
-		$post = new PortfolioWork;
 		$post->title = 'Drupal';
 		$post->markdown = 'I have extensive Drupal experience from my time at Klarna. Their needs for a scalable and multilingual platform led us to migrate their main website from Joomla and rebuild it entirely in Drupal.';
 		$post->coverphoto_url = '/images/klarna.png';
-		$post->demo_url = '';
-		$post->published_at = Carbon::now();
-		$post->save();
-		sleep(1);
-
-		$post = new PortfolioWork;
-		$post->title = 'Infrastructure';
-		$post->markdown = 'I\'ve dabbled with enough servers to feel comfortable around setting up production-grade firewalls, Redis, NFS, HAProxy, CDNs and all those other tidbits you\'d expect a kickass website to use.';
-		$post->coverphoto_url = '/images/8437956869_66d8b38f1b_z.jpg';
 		$post->demo_url = '';
 		$post->published_at = Carbon::now();
 		$post->save();
@@ -79,6 +43,15 @@ class MigratePortfolio extends Migration {
 		sleep(1);
 
 		$post = new PortfolioWork;
+		$post->title = 'Phonegap';
+		$post->markdown = 'I wrote an app to search the Stockholm apartment rental queue. It was built with Phonegap Build so that I could use the frameworks I know and love.'.PHP_EOL.PHP_EOL.'The app featured a localStorage cache, a serverside API, and realtime filtering of search results.';
+		$post->coverphoto_url = '/images/bostadroid.png';
+		$post->demo_url = '';
+		$post->published_at = Carbon::now();
+		$post->save();
+		sleep(1);
+
+		$post = new PortfolioWork;
 		$post->title = 'Laravel';
 		$post->markdown = 'Svensk Båtutbildning needed a new booking system and wanted it to eliminate the manual chores of handling payments.';
 		$post->coverphoto_url = '/images/batutb.png';
@@ -88,9 +61,9 @@ class MigratePortfolio extends Migration {
 		sleep(1);
 
 		$post = new PortfolioWork;
-		$post->title = 'Phonegap';
-		$post->markdown = 'I wrote an app to search the Stockholm apartment rental queue. It was built with Phonegap Build so that I could use the frameworks I know and love.'.PHP_EOL.PHP_EOL.'The app featured a localStorage cache, a serverside API, and realtime filtering of search results.';
-		$post->coverphoto_url = '/images/bostadroid.png';
+		$post->title = 'Infrastructure';
+		$post->markdown = 'I\'ve dabbled with enough servers to feel comfortable around setting up production-grade firewalls, Redis, NFS, HAProxy, CDNs and all those other tidbits you\'d expect a kickass website to use.';
+		$post->coverphoto_url = '/images/8437956869_66d8b38f1b_z.jpg';
 		$post->demo_url = '';
 		$post->published_at = Carbon::now();
 		$post->save();
@@ -106,12 +79,39 @@ class MigratePortfolio extends Migration {
 		sleep(1);
 
 		$post = new PortfolioWork;
+		$post->title = 'Barcode scanner web app';
+		$post->markdown = 'With a bit of JS and backend APIs the warehouse staff is now able to quickly look up shipment labels and product storage locations.';
+		$post->coverphoto_url = '/images/2683653952_c9064f0899_z.jpg';
+		$post->demo_url = '';
+		$post->published_at = Carbon::now();
+		$post->save();
+		sleep(1);
+
+		$post = new PortfolioWork;
+		$post->title = 'ElasticSearch';
+		$post->markdown = 'Managing an e-store is tricky. I built a blazing fast search engine that indexes orders and shows additional information from various integrated services such as the payment provider, the shipping company and our customer support tool HelpScout.';
+		$post->coverphoto_url = '';
+		$post->demo_url = '';
+		$post->published_at = Carbon::now();
+		$post->save();
+		sleep(1);
+
+		$post = new PortfolioWork;
 		$post->title = 'Single page app';
 		$post->markdown = 'I built a level editor for a game to explore the fundamentals of single-page apps as well as push my frontend performance optimization skills to the limit.'.PHP_EOL.PHP_EOL.'It\'s now [on Github](https://github.com/Sleavely/OTWorlds).';
 		$post->coverphoto_url = '/images/otworlds-doodads.png';
 		$post->demo_url = 'https://otworlds.com/';
 		$post->published_at = Carbon::now();
 		$post->save();
+
+		$post = new PortfolioWork;
+		$post->title = 'Returns portal';
+		$post->markdown = 'We needed a tailormade system for RMA to handle all of the edge cases that may occur when you sell food online, I ended up building a single page app with Laravel and Handlebars.';
+		$post->coverphoto_url = '';
+		$post->demo_url = 'http://returns.animail.com/login';
+		$post->published_at = Carbon::now();
+		$post->save();
+		sleep(1);
 	}
 
 	/**
@@ -121,7 +121,7 @@ class MigratePortfolio extends Migration {
 	 */
 	public function down()
 	{
-		PortfolioWork::all()->delete();
+		DB::table('portfolio_work')->delete();
 	}
 
 }
