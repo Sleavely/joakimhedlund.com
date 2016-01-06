@@ -17,9 +17,10 @@
 
   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{{ url('rss') }}}">
 
-  <link href="{{{ asset('css/bootstrap.css') }}}" rel="stylesheet" type="text/css" />
-  <link href="{{{ asset('css/font-awesome.min.css') }}}" rel="stylesheet" type="text/css" />
-  <link href="{{{ asset('css/drunken-parrot.css') }}}" rel="stylesheet" type="text/css" />
+  <link href="{{{ asset('css/libs/bootstrap.css') }}}" rel="stylesheet" type="text/css" />
+  <link href="{{{ asset('css/libs/font-awesome.min.css') }}}" rel="stylesheet" type="text/css" />
+  <link href="{{{ asset('css/libs/drunken-parrot.css') }}}" rel="stylesheet" type="text/css" />
+  <link href="{{{ asset('css/main.css') }}}" rel="stylesheet" type="text/css" />
 
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -39,48 +40,6 @@
   </script>
 
   <style>
-  html,
-  body
-  {
-    background-color: #f5f5f5;
-  }
-  #hero
-  {
-    min-height: 200px;
-  }
-  #hero h1
-  {
-    font-size: 64px;
-    margin-bottom: 0;
-    margin-top: 0.3em;
-  }
-  #hero h3
-  {
-    margin-left: 1em;
-    margin-top: 0.3em;
-  }
-  @media (max-width: 767px) {
-    #hero .media
-    {
-      margin-top: 50px;
-    }
-    #hero h1
-    {
-      font-size: 34px;
-    }
-  }
-  @media (max-width: 767px) and (min-width: 501px) {
-    #hero h1
-    {
-      margin-top: 1em;
-    }
-  }
-  @media (max-width: 500px) {
-    .media-object
-    {
-      max-width: 75px;
-    }
-  }
   @media (min-width: 768px) {
     #hero
     {
@@ -91,21 +50,6 @@
       min-height: 600px;
       padding-top: 200px;
     }
-  }
-  .thumbnail .caption {
-    font-size: inherit;
-  }
-  .thumbnail.thumbnail-bordered > img
-  {
-    border-left: 2px solid #d6e1e5;
-    border-right: 2px solid #d6e1e5;
-    border-top: 2px solid #d6e1e5;
-  }
-
-  #contact
-  {
-    margin-top: 10em;
-    margin-bottom: 10em;
   }
   </style>
 </head>
