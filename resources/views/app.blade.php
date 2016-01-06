@@ -7,9 +7,9 @@
 	<title>Joakim Hedlund, web enthusiast</title>
 
 	@section('stylesheets')
-		<link href="{{{ asset('css/bootstrap.css') }}}" rel="stylesheet" type="text/css" />
-		<link href="{{{ asset('css/font-awesome.min.css') }}}" rel="stylesheet" type="text/css" />
-		<link href="{{{ asset('css/drunken-parrot.css') }}}" rel="stylesheet" type="text/css" />
+		<link href="{{{ asset('css/libs/bootstrap.css') }}}" rel="stylesheet" type="text/css" />
+		<link href="{{{ asset('css/libs/font-awesome.min.css') }}}" rel="stylesheet" type="text/css" />
+		<link href="{{{ asset('css/libs/drunken-parrot.css') }}}" rel="stylesheet" type="text/css" />
 		<style>
 		html,
 		body

@@ -51,14 +51,12 @@ body
     padding-top: 55px;
   }
 }
-.thumbnail .caption {
-  font-size: inherit;
-}
-.thumbnail.thumbnail-bordered > img
+.portfoliowork.panel img
 {
-  border-left: 2px solid #d6e1e5;
-  border-right: 2px solid #d6e1e5;
-  border-top: 2px solid #d6e1e5;
+  display: block;
+  margin: 0 auto;
+  max-height: 300px;
+  max-width: 100%;
 }
 
 #meta,

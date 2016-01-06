@@ -16,7 +16,7 @@ class PortfolioController extends Controller {
    */
 	private function entries()
 	{
-		$entries = PortfolioWork::whereNotNull('published_at')->get();
+		$entries = PortfolioWork::whereNotNull('published_at')->orderBy('published_at', 'desc')->get();
 		return $entries;
 	}
 

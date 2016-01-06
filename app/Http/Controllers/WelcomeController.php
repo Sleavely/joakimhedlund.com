@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\PortfolioWork;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +32,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$works = PortfolioWork::whereNotNull('published_at')->orderBy('published_at', 'desc')->take(3)->get();
+		return view('welcome')->withPortfolioworks($works);
 	}
 
 }

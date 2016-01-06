@@ -71,34 +71,17 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-9">
-        <ul>
-        @foreach($entries as $entry)
-          <li><a href="/portfolio/{{{ $entry->slug }}}">{{{ $entry->title }}}</a></li>
-        @endforeach
-        </ul>
+    @for ($i = 0; $i < $entries->count(); $i++)
+      @if(($i) % 3 == 0)
       </div>
-    </div>
+      <div class="row">
+      @endif
 
-    <!-- With cover photo -->
-    <div class="col-sm-4">
-      <div class="thumbnail thumbnail-caption">
-        <img src="{{{ asset('images/4665905531_3c54137c0d_z.jpg') }}}" alt="Photo by Hermann Kaser" />
-        <div class="caption">
-          <h4>Performance optimization</h4>
-          <p>I'm a big fan of New Relic and the flame charts in Chrome's Developer Tools. Few things make me feel as bad-ass as cutting load times in half.</p>
-        </div>
+      <div class="col-sm-4">
+        @include('portfolio.card', ['entry' => $entries[$i]])
       </div>
-    </div>
 
-    <!-- Without cover photo -->
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h4>ElasticSearch</h4>
-          <p>Managing an e-store is tricky. I built a blazing fast search engine that indexes orders and shows additional information from various integrated services such as the payment provider, the shipping company and our customer support tool HelpScout.</p>
-        </div>
-      </div>
+    @endfor
     </div>
 
     <div class="row">
