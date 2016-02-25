@@ -21,7 +21,9 @@
   <link href="{{{ asset('css/libs/font-awesome.min.css') }}}" rel="stylesheet" type="text/css" />
   <link href="{{{ asset('css/libs/drunken-parrot.css') }}}" rel="stylesheet" type="text/css" />
   <link href="{{{ asset('css/main.css') }}}" rel="stylesheet" type="text/css" />
+  <link href="{{{ asset('packages/prism/prism.css') }}}" rel="stylesheet" type="text/css" />
 
+  <script src="{{{ asset('packages/prism/prism.js') }}}"></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-2840885-13']);
