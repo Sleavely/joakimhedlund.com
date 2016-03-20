@@ -61,7 +61,7 @@
 				@foreach($entries as $entry)
 					<a href="{{ action('AdminController@getBlog', [$entry->id ]) }}" class="list-group-item{{ (action('AdminController@getBlog', [$entry->id ]) == Request::url() ? ' active' : '') }}">
 						{{ $entry->title }}<br />
-						<small>{{ $entry->created_at->diffForHumans() }}</small>
+						<small><i class="fa {{ ($entry->published_at ? 'fa-check-square-o' : 'fa-square-o') }}"></i> {{ $entry->created_at->diffForHumans() }}</small>
 					</a>
 				@endforeach
 			</div>
