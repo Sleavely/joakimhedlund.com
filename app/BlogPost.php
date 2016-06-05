@@ -35,4 +35,13 @@ class BlogPost extends Model implements SluggableInterface {
     $html = $Parsedown->text( $this->markdown );
     return $html;
   }
+
+  public function getPreviewAttribute()
+  {
+    $Parsedown = new Parsedown();
+    $html = $Parsedown->text( $this->markdown );
+    preg_match("/<p>(.*)<\/p>/", $html, $matches);
+    $intro = strip_tags($matches[1]);
+    return $intro;
+  }
 }
