@@ -65,7 +65,7 @@ class BlogController extends Controller {
 				->appendTo($channel);
 		}
 
-		return $feed;
+		return response($feed)->header('Content-Type','application/rss+xml');
 	}
 
 	/**
