@@ -16,7 +16,9 @@ class BlogController extends Controller {
    */
 	private function posts()
 	{
-		$posts = BlogPost::whereNotNull('published_at')->get();
+		$posts = BlogPost::whereNotNull('published_at')
+			->orderBy('created_at', 'desc')
+			->get();
 		return $posts;
 	}
 
