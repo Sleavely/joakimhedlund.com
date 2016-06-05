@@ -74,9 +74,25 @@ p
 {
   margin-bottom: 2em;
 }
-#meta span
+#meta span,
+.meta span
 {
   font-size: 0.9em;
+}
+.post .panel h3
+{
+  color: #009dcd;
+}
+.post .panel .meta span
+{
+  color: #364347;
+  display: inline-block;
+  margin-top: 0.3em;
+}
+
+.panel p:only-child
+{
+  margin-bottom: 0;
 }
 
 #contact

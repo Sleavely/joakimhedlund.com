@@ -63,16 +63,31 @@
     <div class="row">
       <div class="col-sm-9">
         <h2 id="about">Blog</h2>
+        <p>Prefer to read these things as <a href="{{{ url('rss') }}}">RSS</a>?</p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm-9">
-        <ul>
         @foreach($posts as $post)
-          <li><a href="/blog/{{{ $post->slug }}}">{{{ $post->title }}}</a></li>
+        <a class="post" href="/blog/{{{ $post->slug }}}">
+          <div class="panel panel-default">
+  					<div class="panel-heading meta">
+              <div class="row">
+                <div class="col-lg-9">
+      						<h3 class="panel-title">{{{ $post->title }}}</h3>
+                </div>
+                <div class="col-lg-3">
+                  <span title="{{{ $post->updated_at->toW3cString() }}}">Last updated <time datetime="{{{ $post->updated_at->toW3cString() }}}">{{ $post->updated_at->diffForHumans() }}</time></span>
+                </div>
+              </div>
+  					</div>
+  					<div class="panel-body">
+  						<p>{{{ $post->preview }}}</p>
+  					</div>
+  				</div>
+        </a>
         @endforeach
-        </ul>
       </div>
     </div>
 
