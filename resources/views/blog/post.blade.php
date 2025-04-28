@@ -13,7 +13,7 @@
   <meta property="og:image" content="http://gravatar.com/avatar/8c88d8cf7e0b9ac9d5bfe6b900028673?s=120" />
   <meta property="og:site_name" content="Joakim Hedlund, web enthusiast" />
   <meta property="fb:admins" content="1281266716" />
-  <meta property="og:description" content="Web developer focusing on user experiences and code optimization." />
+  <meta property="og:description" content="{{{ $post->preview }}}" />
 
   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{{ url('rss') }}}">
 
